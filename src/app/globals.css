@@ -24,3 +24,156 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 75% 6.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-0;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hero styles */
+.hero-gradient {
+  background: linear-gradient(100deg, rgba(0, 110, 230, 0.2), rgba(0, 47, 128, 0.1));
+  backdrop-filter: blur(40px);
+}
+
+.dna-animation {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  opacity: 0.1;
+  right: -100px;
+  top: 0;
+  animation: rotateY 20s infinite linear;
+  z-index: 0;
+}
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg) rotateX(10deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(10deg);
+  }
+}
+
+/* Card hover effects */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated gradient button */
+.gradient-button {
+  background-size: 200% 200%;
+  background-image: linear-gradient(45deg, #3b82f6, #2563eb, #1d4ed8, #3b82f6);
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Additional dark mode improvements */
+.dark .bg-card {
+  background-color: hsl(222.2 75% 6.9%);
+  border-color: hsl(217.2 32.6% 20%);
+}
+
+.dark .text-muted-foreground {
+  color: hsl(215 20.2% 75.1%);
+}
+
+.dark .border-slate-800 {
+  border-color: hsl(217.2 32.6% 20%);
+}
+
+/* Tab styling improvements */
+.dark .tabs-list {
+  background-color: hsl(217.2 32.6% 12%);
+}
+
+.dark .bg-primary\/5 {
+  background-color: hsla(217.2, 91.2%, 59.8%, 0.1);
+}
+
+.dark .bg-primary\/10 {
+  background-color: hsla(217.2, 91.2%, 59.8%, 0.15);
+}

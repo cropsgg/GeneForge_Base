@@ -1,0 +1,72 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(300, 300)">
+    <!-- Central Helix Curve 1 -->
+    <path d="M0,-250 Q100,-125 0,0 Q-100,125 0,250" stroke="#3b82f6" stroke-width="8" fill="none" />
+    <!-- Central Helix Curve 2 -->
+    <path d="M0,-250 Q-100,-125 0,0 Q100,125 0,250" stroke="#3b82f6" stroke-width="8" fill="none" />
+    
+    <!-- Rungs of the DNA ladder -->
+    <line x1="-70" y1="-220" x2="70" y2="-220" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-80" y1="-180" x2="80" y2="-180" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-90" y1="-140" x2="90" y2="-140" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-95" y1="-100" x2="95" y2="-100" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-100" y1="-60" x2="100" y2="-60" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-95" y1="-20" x2="95" y2="-20" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-90" y1="20" x2="90" y2="20" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-80" y1="60" x2="80" y2="60" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-70" y1="100" x2="70" y2="100" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-60" y1="140" x2="60" y2="140" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-70" y1="180" x2="70" y2="180" stroke="#8b5cf6" stroke-width="6" />
+    <line x1="-80" y1="220" x2="80" y2="220" stroke="#8b5cf6" stroke-width="6" />
+    
+    <!-- DNA Base Pairs (represented as circles) -->
+    <circle cx="-70" cy="-220" r="12" fill="#3b82f6" />
+    <circle cx="70" cy="-220" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-80" cy="-180" r="12" fill="#8b5cf6" />
+    <circle cx="80" cy="-180" r="12" fill="#3b82f6" />
+    
+    <circle cx="-90" cy="-140" r="12" fill="#3b82f6" />
+    <circle cx="90" cy="-140" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-95" cy="-100" r="12" fill="#8b5cf6" />
+    <circle cx="95" cy="-100" r="12" fill="#3b82f6" />
+    
+    <circle cx="-100" cy="-60" r="12" fill="#3b82f6" />
+    <circle cx="100" cy="-60" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-95" cy="-20" r="12" fill="#8b5cf6" />
+    <circle cx="95" cy="-20" r="12" fill="#3b82f6" />
+    
+    <circle cx="-90" cy="20" r="12" fill="#3b82f6" />
+    <circle cx="90" cy="20" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-80" cy="60" r="12" fill="#8b5cf6" />
+    <circle cx="80" cy="60" r="12" fill="#3b82f6" />
+    
+    <circle cx="-70" cy="100" r="12" fill="#3b82f6" />
+    <circle cx="70" cy="100" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-60" cy="140" r="12" fill="#8b5cf6" />
+    <circle cx="60" cy="140" r="12" fill="#3b82f6" />
+    
+    <circle cx="-70" cy="180" r="12" fill="#3b82f6" />
+    <circle cx="70" cy="180" r="12" fill="#8b5cf6" />
+    
+    <circle cx="-80" cy="220" r="12" fill="#8b5cf6" />
+    <circle cx="80" cy="220" r="12" fill="#3b82f6" />
+    
+    <!-- Small data nodes (representing data points in the DNA) -->
+    <circle cx="-130" cy="-200" r="5" fill="#10b981" />
+    <circle cx="130" cy="-160" r="5" fill="#10b981" />
+    <circle cx="-140" cy="-120" r="5" fill="#10b981" />
+    <circle cx="140" cy="-80" r="5" fill="#10b981" />
+    <circle cx="-130" cy="-40" r="5" fill="#10b981" />
+    <circle cx="125" cy="0" r="5" fill="#10b981" />
+    <circle cx="-120" cy="40" r="5" fill="#10b981" />
+    <circle cx="130" cy="80" r="5" fill="#10b981" />
+    <circle cx="-125" cy="120" r="5" fill="#10b981" />
+    <circle cx="120" cy="160" r="5" fill="#10b981" />
+    <circle cx="-110" cy="200" r="5" fill="#10b981" />
+  </g>
+</svg> 

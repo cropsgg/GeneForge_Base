@@ -1,103 +1,197 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ChevronRight, Database, Shield, Zap, FileCode, GitBranch, Dna } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="hero-gradient absolute inset-0"></div>
+        
+        {/* DNA Animation */}
+        <motion.div 
+          className="dna-animation"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1 }}
+        >
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+            src="/dna-helix.svg" 
+            alt="DNA Helix" 
+            width={600} 
+            height={600}
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        </motion.div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col items-start max-w-3xl space-y-6">
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="text-primary">GeneForge:</span> Blockchain CRISPR Platform
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-gray-600 dark:text-gray-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Secure genomic research with blockchain verification - enabling transparent, traceable and immutable gene editing workflows with BASE blockchain.
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Link href="/data">
+                <Button className="gradient-button text-white">
+                  Connect Wallet
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button variant="outline">
+                  Learn More
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      
+      {/* Features Section */}
+      <section className="py-20 bg-muted/50 dark:bg-muted/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Blockchain-Powered CRISPR Solutions</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our platform offers secure, immutable record-keeping for genomic research and CRISPR gene editing with cutting-edge blockchain technology.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Dna className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Genetic Sample Provenance</h3>
+              <p className="text-muted-foreground">
+                Track the origin, chain of custody, and complete history of genomic samples with immutable blockchain records.
+              </p>
+            </motion.div>
+            
+            {/* Feature 2 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <FileCode className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">CRISPR Experiment Audit</h3>
+              <p className="text-muted-foreground">
+                Record CRISPR editing results and maintain a complete audit trail of all gene editing experiments.
+              </p>
+            </motion.div>
+            
+            {/* Feature 3 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Shield className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Genomic Data Access Control</h3>
+              <p className="text-muted-foreground">
+                Manage permissions and access rights to sensitive genomic data with role-based access controls.
+              </p>
+            </motion.div>
+            
+            {/* Feature 4 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Gene Editing Workflow</h3>
+              <p className="text-muted-foreground">
+                Set up automated workflows for CRISPR protocols and gene editing procedures using smart contracts.
+              </p>
+            </motion.div>
+            
+            {/* Feature 5 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <GitBranch className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Genomic IP Protection</h3>
+              <p className="text-muted-foreground">
+                Record and protect intellectual property rights associated with genomic discoveries and CRISPR innovations.
+              </p>
+            </motion.div>
+            
+            {/* Feature 6 */}
+            <motion.div 
+              className="feature-card bg-card p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Database className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Base Blockchain</h3>
+              <p className="text-muted-foreground">
+                Powered by Base, an Ethereum Layer 2 solution that offers the scalability and security needed for genomic data.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-10 flex flex-col lg:flex-row items-center justify-between">
+            <div className="max-w-2xl mb-8 lg:mb-0">
+              <h2 className="text-3xl font-bold mb-4">Ready to Start Your Gene Editing Journey?</h2>
+              <p className="text-lg text-muted-foreground">
+                Connect your wallet and begin recording CRISPR experiments and genomic data on the blockchain today.
+              </p>
+            </div>
+            <Link href="/data">
+              <Button size="lg" className="gradient-button text-white">
+                Connect Wallet
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
