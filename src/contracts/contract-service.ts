@@ -20,24 +20,28 @@ interface ContractAddresses {
 
 // Default placeholder addresses
 const defaultAddresses: ContractAddresses = {
-  sampleProvenance: '0x0000000000000000000000000000000000000000',
-  experimentalDataAudit: '0x0000000000000000000000000000000000000000',
-  accessControl: '0x0000000000000000000000000000000000000000',
-  workflowAutomation: '0x0000000000000000000000000000000000000000',
-  intellectualProperty: '0x0000000000000000000000000000000000000000'
+  sampleProvenance: '0x97212557fdfffd409e39ef5a9fb6bbb8c372ab99',
+  experimentalDataAudit: '0xd4c1c9e965dc6bcf2d398840c70acb34e940b978',
+  accessControl: '0xd98078eb6de460d5883566f1fe4ae43fe89ae77b',
+  workflowAutomation: '0x2a7ec664a8d61cdb49f1b9de2b19a9517e68b62a',
+  intellectualProperty: '0xacc3012caa93ec7141535f28aab4aa9a47b30edd'
 };
 
-// Try to load contract addresses from JSON
+// Use default addresses directly
 let addresses: ContractAddresses = { ...defaultAddresses };
-try {
-  // Using dynamic import to avoid require() style imports
-  import('./contract-addresses.json').then(module => {
-    addresses = { ...defaultAddresses, ...module.default };
-  }).catch(err => {
-    console.warn('Could not load contract addresses, using placeholders');
-  });
-} catch (importError) {
-  console.warn('Could not load contract addresses, using placeholders');
+
+// Only try to load addresses in browser environment
+if (typeof window !== 'undefined') {
+  try {
+    // Using dynamic import to avoid require() style imports
+    import('./contract-addresses.json').then(module => {
+      addresses = { ...defaultAddresses, ...module.default };
+    }).catch(err => {
+      console.warn('Could not load contract addresses, using default addresses');
+    });
+  } catch (importError) {
+    console.warn('Could not load contract addresses, using default addresses');
+  }
 }
 
 // The chain where contracts are deployed

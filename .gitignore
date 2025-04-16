@@ -64,7 +64,7 @@ next-env.d.ts
 ignition/deployments/chain-31337
 
 # Sensitive API keys and secrets
-**/contract-addresses.json
+# **/contract-addresses.json # Uncommented to allow tracking for deployment
 **/*.key
 **/*.pem
 **/*secrets*
